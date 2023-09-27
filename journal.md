@@ -8,3 +8,6 @@
 
 
 ## Séance 2
+
+- synchronisation entre l'interface web github et l'ordinateur
+- création d'une clé publique et d'une clé privée
