@@ -1,9 +1,7 @@
 # Journal d'Amandine
-## Séance du 20 septembre
+## Séance 1
 
-on a fait
-- a
-- b
-- c
+Création d'une arborescence de fichiers pour se familiariser avec les commandes du terminal
 
-Et j'y arrive pas : 
+
+## Séance 2
