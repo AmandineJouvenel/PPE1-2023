@@ -13,4 +13,4 @@
 - Création d'une clé publique et d'une clé privée
 - Création d'un lien entre son dépôt de travail et son compte github
 - Découverte de quelques commandes git
-- Test
+- Découverte du principe des étiquettes
