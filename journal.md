@@ -16,7 +16,6 @@
 - Découverte du principe des étiquettes
 
 
-## Séance 3
 - Ceci est une erreur.
 - Ceci est aussi une erreur.
 
