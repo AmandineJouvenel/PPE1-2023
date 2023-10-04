@@ -15,6 +15,10 @@
 - Découverte de quelques commandes git
 - Découverte du principe des étiquettes
 
+
 ## Séance 3
 - Ceci est une erreur.
 - Ceci est aussi une erreur.
+
+
+## Séance 3
