@@ -127,3 +127,63 @@ La commande chmod +x permet de rendre le fichier exécutable.
 - Premier script : pas de difficulté particulière
 - Exercice 1 : difficulté de compréhension de la première consigne
 - Exercice 2 : difficulté à trouver comment accepter * pour l’année et le mois
+
+
+## Séance 5
+
+### Correction des exercices
+
+### Instructions de contrôle
+
+Les instructions de contrôle permettent d'effectuer des traitements selon certaines conditions.
+
+Nous avons vu l'instruction if qui peut porter sur des chemins, des chaînes de caractères, ou des entiers.
+
+Un des intérêts de if est de vérifier si l'utilisateur a bien entré les arguments nécessaires au traitement.
+
+### Boucles for et while
+
+Les boucles for permettent de répéter des actions en itérant sur une variable. Ce la a pour intérêt de raccourcir le code.
+
+Les boucles while permettent de répéter des actions en itérant sur une variable tant qu'une condition est vérifiée.
+
+### HTML
+
+HTML est un langage de balisage pour représenter des pages web.
+
+Dialogue avec Internet :
+1. URL (Utilisateur > Navigateur)
+2. Requête HTTP (Navigateur > Serveur Web)
+3. HTTP Response (Serveur Web > Navigateur)
+4. Webpage (Navigateur > Utilisateur)
+
+Nomenclature des codes HTTP :
+- 1xx : information
+- 200 : réussite
+- 3xx : redirections
+- 4xx : erreurs du client
+- 5xx : erreurs du serveur
+
+### Lynx
+
+Lynx est un navigateur web en terminal.
+Nous avons vu 2 options intéressantes de Lynx :
+- -dump : permet de récupérer le contenu textuel d’une page pour l’afficher
+- -nolist : permet de retirer la liste des liens d’une page à l’affichage
+
+### wget et cURL
+
+wget et cURL sont deux commandes permettant de récupérer des pages web sans passer par un navigateur.
+
+Pour lancer la commande curl : curl <URL>
+
+Nous avons vu quelques options utiles de curl :
+- -i : informations sur l’interaction avec le serveur
+- -L : suit les redirections
+- -o <fichier> : indique un fichier de sortie
+
+### Travail pour la séance 6
+
+Modifier vos programmes pour qu’ils valident leurs arguments et se terminent s'il y a un problème
+--> même difficulté que la semaine dernière, je n'arrive pas à faire accepter l'étoile pour l'année et le mois dans l'exercice 2
+
