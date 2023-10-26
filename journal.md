@@ -187,3 +187,78 @@ Nous avons vu quelques options utiles de curl :
 Modifier vos programmes pour qu’ils valident leurs arguments et se terminent s'il y a un problème
 --> même difficulté que la semaine dernière, je n'arrive pas à faire accepter l'étoile pour l'année et le mois dans l'exercice 2
 
+
+## Séance 6
+
+### Point sur le projet
+
+Pour notre projet, nous devrons homogénéiser les encodages des pages web récoltées. On privilégiera l'UTF-8.
+Deux paramètres importants pour le traitement des données concernent le choix du mot et la sélection du corpus.
+Nous devrons expliquer pourquoi nous avons choisi ce mot, qu’est-ce qu’on pense trouver, quelle est notre hypothèse de départ.
+On privilégiera les pages non payantes, non réservées aux abonnés (pour la presse), et on naviguera en navigation privée pour ne pas être gênés par les cookies.
+
+### Début du mini projet : commencer la récolte des données préparées
+
+L'objectif de cette séance est de voir les différentes étapes du projet individuellement, en  démarrant d’une liste d’URLs déjà faite.
+
+### Allure générale du travail de récolte
+
+La première étape de la récolte consiste à lire des fichiers de données en entrée.
+La deuxième étape consiste, pour chacun des fichiers d’URLs, à les lire ligne par ligne, vérifier si l’URL a l’air correcte, si la requête réussit, et à détecter l’encodage.
+
+### Construction du script :
+
+On commence par récupérer des URLs contenues dans un fichier texte. Puis, on écrit les premières colonnes du tableau, en ajoutant des colonnes au fur et à mesure. L'objectif est de transformer le tout en page web. Pour commencer, on prend un seul argument : le fichier d’URLs.
+
+### Exercice 1 : lire les lignes d’un fichier en bash
+
+A partir d'un script qui lit un fichier ligne par ligne, nous avons transformé le fichier d'entrée en paramètre du script en créant une variable "fichier qui correspond au premier argument ("$1").
+
+On s'est ensuite assuré que l'on donne bien un argument au scrpt en utilisant une boucle if suivant la logique suivante : si l'argument est vide (if [ -z "$1" ]), on affiche un message d'erreur (echo "Il faut entrer un fichier d'URLs"), sinon on exécute le programme.
+
+Puis, on a affiché le numéro de ligne avant chaque URL en créant une nouvelle variable "lineno" (initialisée à 0), que l'on incrémente de 1 à chaque ligne dans notre boucle while (lineno=$(expr $lineno + 1), et que l'on affiche avant la ligne (echo ${lineno} ${line}).
+
+Enfin, on a séparé les valeurs par des tabulations, en utilisant l'option -e de echo et en utilisant "\t" pour les tabulations (echo -e ${lineno} "\t" ${line}).
+
+### Exercice 2 : récupérer les métadonnées de collecte
+
+Après l’exercice 1 fait, on a rajouté des informations à chaque ligne, toujours séparées par des tabulations :
+- le code HTTP de réponse à la requête (en corrigeant les erreurs si besoin)
+- l’encodage de la page, s’il est présent
+
+
+Difficultés :
+
+1. Je ne suis pas parvenue à corriger les erreurs 404 et 502.
+
+2. Je n'arrive pas à afficher plus de 3 éléments séparés par des tabulations dans le echo. Quand j'en rentre un quatrième (peu importe l'ordre des éléments), il y a un problème.
+
+Par exemple, si je fais : echo -e $lineno "\t" $line "\t" $codehttp "\t"  $encodage;
+
+Quand je lance le programme, cela fait :
+
+ UTF-8://fr.wikipedia.org/wiki/Robot     HTTP/2 200
+         UTF-8://fr.wikipedia.org/wiki/Robot_de_cuisine          HTTP/2 200
+         fr.wikipedia.org/wiki/Robot_d%27indexation      HTTP/1.1 301 Moved Permanently
+         UTF-8://fr.wikipedia.org/wiki/Bot_informatique          HTTP/2 200
+         UTF-8://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)          HTTP/2 404
+         https://roboty.magistry.fr      HTTP/1.1 502 Bad Gateway
+
+Par contre, si j'enlève le quatrième élément de mon echo, et que je le mets dans un 2e echo comme ceci :
+
+echo -e $lineno "\t" $line "\t" $codehttp
+echo $encodage;
+
+Cela m'affiche correctement les 3 premiers éléments séparés par des tabulations, et le 4e sur une ligne en dessous :
+
+1        https://fr.wikipedia.org/wiki/Robot     HTTP/2 200
+UTF-8
+2        https://fr.wikipedia.org/wiki/Robot_de_cuisine          HTTP/2 200
+UTF-8
+3        fr.wikipedia.org/wiki/Robot_d%27indexation      HTTP/1.1 301 Moved Permanently
+
+4        https://fr.wikipedia.org/wiki/Bot_informatique          HTTP/2 200
+UTF-8
+5        https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)          HTTP/2 404
+UTF-8
+6        https://roboty.magistry.fr      HTTP/1.1 502 Bad Gateway
