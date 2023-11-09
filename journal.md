@@ -227,38 +227,34 @@ Après l’exercice 1 fait, on a rajouté des informations à chaque ligne, touj
 - l’encodage de la page, s’il est présent
 
 
-Difficultés :
+## Séance 7
 
-1. Je ne suis pas parvenue à corriger les erreurs 404 et 502.
+### Correction de l'exercice 2
 
-2. Je n'arrive pas à afficher plus de 3 éléments séparés par des tabulations dans le echo. Quand j'en rentre un quatrième (peu importe l'ordre des éléments), il y a un problème.
+### Objectifs de la séance
 
-Par exemple, si je fais : echo -e $lineno "\t" $line "\t" $codehttp "\t"  $encodage;
+Lors de cette séance, nous avons appris à transformer un fichier tabulaire en tableau HTML. C'est ce qu'on fera pour le projet.
 
-Quand je lance le programme, cela fait :
+### HTML
 
- UTF-8://fr.wikipedia.org/wiki/Robot     HTTP/2 200
-         UTF-8://fr.wikipedia.org/wiki/Robot_de_cuisine          HTTP/2 200
-         fr.wikipedia.org/wiki/Robot_d%27indexation      HTTP/1.1 301 Moved Permanently
-         UTF-8://fr.wikipedia.org/wiki/Bot_informatique          HTTP/2 200
-         UTF-8://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)          HTTP/2 404
-         https://roboty.magistry.fr      HTTP/1.1 502 Bad Gateway
+HTML est un langage de balisage qui représente les pages web et est reconnu par tous les navigateurs. L'idée est de structurer les informations d'une page web pour les rendre affichable. Concrètement, HTML, c'est des boîtes dans des boîtes, dans des boîtes, etc. Ce sont des imbrications, mais SANS ENCHASSEMENTS !! Cela ressemble un peu à la structure des constituants syntaxiques.
 
-Par contre, si j'enlève le quatrième élément de mon echo, et que je le mets dans un 2e echo comme ceci :
+### Le balisage
 
-echo -e $lineno "\t" $line "\t" $codehttp
-echo $encodage;
+On marque des zones dans un document à l'aide de balises ouvrantes, fermantes, ou autofermantes (ou vides). On peut rajouter des attributs (ensembles de clés-valeurs), par exemple <DET G="M" N="S"> où la balise DET possède 2 arguments (genre et nombre).
+HTML reprend la construction globale du balisage, mais a sa propre syntaxe. Une balise html recouvre tout le document, la balise head contient les métadonnées, et la balise body contient le contenu textuel du document. Dans l'entête, on met l'encodage.
 
-Cela m'affiche correctement les 3 premiers éléments séparés par des tabulations, et le 4e sur une ligne en dessous :
+### HTML : créer un tableau
 
-1        https://fr.wikipedia.org/wiki/Robot     HTTP/2 200
-UTF-8
-2        https://fr.wikipedia.org/wiki/Robot_de_cuisine          HTTP/2 200
-UTF-8
-3        fr.wikipedia.org/wiki/Robot_d%27indexation      HTTP/1.1 301 Moved Permanently
+La balise principale d'un tableau est table. On a aussi besoin des balises tr (ligne), th (cellule d'entête), et td (cellule classique).
 
-4        https://fr.wikipedia.org/wiki/Bot_informatique          HTTP/2 200
-UTF-8
-5        https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)          HTTP/2 404
-UTF-8
-6        https://roboty.magistry.fr      HTTP/1.1 502 Bad Gateway
+### Exercice : transformer la sortie tabulaire en HTML
+
+On redirige la sortie du programme miniprojet.sh vers un fichier de sortie, en effectuant quelques modifications pour ajouter les balises. On récupère le contenu du fichier de sortie que l'on copie-colle dans notre fichier tableau-fr.html.
+
+### Exercices : Candide
+
+1) Nettoyage du fichier avec grep -o -E '\w+' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]'
+2) Mots les plus fréquents avec cat ./fichier_nettoye.txt | sort | uniq -c | sort -nr | head -n $nb_mots
+3) Bigrammes les plus fréquents avec paste <(head -n -1 fichier_nettoye_bigrammes.txt) <(tail -n +2 fichier_nettoye_bigrammes.txt) > bigrammes.txt
+

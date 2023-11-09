@@ -1,0 +1,101 @@
+Nombre d’annotations en 2016 :
+9442
+Nombre d’annotations en 2017 :
+7179
+Nombre d’annotations en 2018 :
+7561
+
+Nombre d’annotations de Location en 2016 :
+3144
+Nombre d’annotations de Location en 2017 :
+2466
+Nombre d’annotations de Location en 2018 :
+3110
+
+20 lieux les plus cités en 2016 :
+    247 France
+    130 Burundi
+    105 Rio
+     82 Paris
+     73 États-Unis
+     47 Syrie
+     41 Russie
+     39 Allemagne
+     37 Canada
+     35 Montpellier
+     34 Turquie
+     34 Italie
+     31 Chine
+     27 Espagne
+     26 Nice
+     25 Suède
+     25 Brésil
+     23 Royaume-Uni
+     22 Europe
+     20 Mars
+
+20 lieux les plus cités en 2017 :
+    282 France
+     79 États-Unis
+     50 Syrie
+     50 Paris
+     37 Turquie
+     36 Russie
+     35 Italie
+     28 Irak
+     26 Europe
+     24 Royaume-Uni
+     23 Ukraine
+     23 Allemagne
+     19 Terre
+     18 Qatar
+     17 Israël
+     17 Chine
+     16 Espagne
+     14 Savoie
+     14 Pakistan
+     14 Haïti
+
+20 lieux les plus cités en 2018 :
+    174 France
+    165 Paris
+     76 Champs-Élysées
+     37 États-Unis
+     36 Russie
+     28 A9
+     24 A7
+     22 A8
+     21 Strasbourg
+     21 A62
+     21 A50
+     20 A61
+     20 A20
+     19 Élysée
+     18 Saint-Lazare
+     18 place de la République
+     18 Japon
+     18 A52
+     18 A51
+     18 A11
+
+20 annotations les plus fréquentes pour juin toutes années confondues :
+     24 T1	Location 0 6	France
+      4 T1	Location 0 10	États-Unis
+      3 T1	Location 0 7	Algérie
+      2 T2	Location 15 21	France
+      2 T2	Date 5 9	2016
+      2 T1	Location 0 8	Belgique
+      2 T1	Event 12 21	WTS Leeds
+      1 T9	Product 798 805	Twitter
+      1 T9	Product 583 594	Kalachnikov
+      1 T9	Product 318 340	Destination Eurovision
+      1 T9	Person 891 903	Non Stanford
+      1 T9	Person 635 653	Jean-Marie Tjibaou
+      1 T9	Person 492 517	Victor Del Corral Morales
+      1 T9	Person 332 345	Hernán Crespo
+      1 T9	Person 313 327	Dominique Dord
+      1 T9	Person 283 291	Alistair
+      1 T9	Person 232 247	Vincent Lambert
+      1 T9	Person 1277 1289	Michel Sapin
+      1 T9	Person 1039 1052	Yohan Leberre
+      1 T9	Organization 825 866	Direction générale des finances publiques
