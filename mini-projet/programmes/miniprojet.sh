@@ -1,7 +1,7 @@
-# Voici un script bash :
-
-
 #!/usr/bin/env bash
+
+# ./miniprojet.sh fr.txt > ../tableaux/tableau-fr.html
+
 
 if [ $# -ne 1 ]
 then
@@ -15,28 +15,38 @@ URLS="$1"
 
 if [ ! -f $URLS ]
 then
-    echo "On attend un fichier, et non un dossier"
+    echo "On attend un fichier !"
 fi
 
+file="table.html"
+echo "<html>
+    <head>
+        <meta charset=\"UTF-8\">
+    </head>
+    <body>"
 
-echo -e "<table>" >> fichier_tabulaire.txt
-echo -e "<tr><th>N°</th><th>URL</th><th>Réponse</th><th>Encodage</th></th>" >> fichier_tabulaire.txt
+echo "      <table>
+            <tr><th>Ligne</th><th>URL</th><th>Code HTTP</th><th>Encodage</th></th>"
+
 
 lineno=1
 while read -r URL
 do
     response=$(curl -s -I -L -w "%{http_code}" -o /dev/null $URL)      # ou curl -s -I -L $URL | grep -P '^HTTP/' | tail -n 1
     encoding=$(curl -s -I -L -w "%{content_type}" -o /dev/null $URL | grep -P -o "charset=\S+" | cut -d"=" -f2)
-    echo -e "<tr><td>$lineno</td><td>$URL</td><td>$response</td><td>$encoding</td></tr>"
+    echo "<tr>
+        <td>$lineno</td>
+        <td>$URL</td>
+        <td>$response</td>
+        <td>$encoding</td>
+        </tr>"
     lineno=$(expr $lineno + 1)
-done < $URLS >> fichier_tabulaire.txt
-
-echo -e "</table>" >> fichier_tabulaire.txt
+done < $URLS
 
 
-
-# Comment gérer le fait que le fichier de sortie "fichier_tabulaire.txt" soit dans un autre répertoire ?
-
+echo "      </table>
+    </body>
+</html>"
 
 
 
