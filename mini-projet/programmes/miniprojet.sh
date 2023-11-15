@@ -18,7 +18,6 @@ then
     echo "On attend un fichier !"
 fi
 
-file="table.html"
 echo "<html>
     <head>
         <meta charset=\"UTF-8\">
