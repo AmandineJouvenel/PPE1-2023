@@ -3,26 +3,41 @@
 fichier="$1"
 nb_bigrammes="$2"
 
-if [ -z "$fichier" ]
+
+if [ ! -f "$1" ]
 then
-    echo "Entrez un nom de fichier (obligatoire) et le nombre de bigrammes que vous souhaitez afficher (optionnel)"
+    echo "Pas de fichier donné en argument !"
     exit
 fi
 
-if [ -z "$nb_bigrammes" ]
+
+if [ -z "$2" ]
 then
     nb_bigrammes=25
+else
+    nb_bigrammes="$2"
 fi
 
-./prepa_fichier.sh "$fichier" > fichier_nettoye_bigrammes.txt
 
-paste <(head -n -1 fichier_nettoye_bigrammes.txt) <(tail -n +2 fichier_nettoye_bigrammes.txt) > bigrammes.txt
+if ! [[ "$nb_bigrammes" =~ ^0*[1-9][0-9]*$ ]]
+then
+    echo "Donnez un nombre !"
+    exit
+fi
+
+
+./prepa_fichier.sh "$fichier" > col1
+echo "_" > col2
+./prepa_fichier.sh "$fichier" >> col2
+
 
 echo "Bigrammes les plus fréquents :"
-cat bigrammes.txt | sort | uniq -c | sort -nr | head -n "$nb_bigrammes"
+paste col1 col2 | sort | uniq -c | sort -nr | head -n "$nb_bigrammes"
 
 
 
-# paste : concatène head -n -1 fichier avec tail -n +2 fichier
-# head -n -1 : toutes les lignes jusqu'à la dernière (car pas de bigramme possible)
-# tail -n +2 toutes les lignes à partir de la 2e (même raison)
+
+
+# paste col1 col2 : concatène col1 et col2 pour chaque ligne
+# echo "_" > col2 : pour décaler d'une ligne col2 par rapport à col1
+# ./prepa_fichier.sh "$fichier" >> col2 : 2 chevrons pour ajouter à la suite de l'underscore !!
