@@ -21,10 +21,12 @@ fi
 echo "<html>
     <head>
         <meta charset=\"UTF-8\">
+        <title>Tableau résultats</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     </head>
     <body>"
 
-echo "      <table>
+echo "      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
             <tr><th>Ligne</th><th>URL</th><th>Code HTTP</th><th>Encodage</th></th>"
 
 

@@ -1,59 +1,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
-
-        <style>
-
-        body {
-            font-family: monospace;
-            text-shadow: 1px 1px 1px black;
-            background-image: url(https://cdn.britannica.com/30/199930-131-B3D1D347/computer.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100vh;
-            color: #D6D6D6;
-        }
-
-        table {
-            border : 1px solid white;
-            font-size:1.1em;
-            background-color: rgb(163, 142, 122);
-            color: white;
-            text-align: center;
-            padding-left: 2%;
-            padding-right: 2%;
-            width: 100%;
-            border-collapse: collapse;
-            margin-left: 0px;
-            margin-right: 0px;
-            opacity: 0.95;
-        }
-
-        th, td {
-            border: 1px solid #383838;
-            padding: 8px;
-            text-align: center;
-        }
-
-        th {
-            background-color: rgb(117, 127, 146 );
-        }
-
-        tr:nth-child(even) {
-            background-color: rgb(185, 196, 218);
-        }
-
-        tr:nth-child(odd) {
-            background-color: rgb(157, 168, 189);
-        }
-    </style>
-
+        <title>Tableau résultats</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
     </head>
 
     <body>
 
-      <table>
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
 
         <tr><th>Ligne</th><th>URL</th><th>Code HTTP</th><th>Encodage</th></th>
 
