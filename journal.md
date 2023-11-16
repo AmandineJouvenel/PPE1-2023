@@ -288,20 +288,9 @@ Il faudra faire attention à 2 types de classes :
 - les classes de base (colonnes, titres...)
 - les modifieurs (classes dont le nom commence par is- ou has-)
 
+### Exercices pour la prochaine séance
 
+- Créer une page d’accueil (index) qui utilise le style Bulma contenant une présentation rapide du mini-projet et le lien vers la page HTML qui contient le tableau de résultats
+- modifier le css du tableau pour avoir un résultat plus joli
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Lien de la page d'accueil : https://amandinejouvenel.github.io/PPE1-2023/
