@@ -1,9 +1,106 @@
-<table>
-<tr><th>N°</th><th>URL</th><th>Réponse</th><th>Encodage</th></th>
-<tr><td>1</td><td>https://fr.wikipedia.org/wiki/Robot</td><td>200</td><td>UTF-8</td></tr>
-<tr><td>2</td><td>https://fr.wikipedia.org/wiki/Robot_de_cuisine</td><td>200</td><td>UTF-8</td></tr>
-<tr><td>3</td><td>fr.wikipedia.org/wiki/Robot_d%27indexation</td><td>200</td><td>UTF-8</td></tr>
-<tr><td>4</td><td>https://fr.wikipedia.org/wiki/Bot_informatique</td><td>200</td><td>UTF-8</td></tr>
-<tr><td>5</td><td>https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)</td><td>404</td><td>UTF-8</td></tr>
-<tr><td>6</td><td>https://roboty.magistry.fr</td><td>502</td><td></td></tr>
-</table>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <style>
+
+        body {
+            font-family: monospace;
+            text-shadow: 1px 1px 1px black;
+            background-image: url(https://cdn.britannica.com/30/199930-131-B3D1D347/computer.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            color: #D6D6D6;
+        }
+
+        table {
+            border : 1px solid white;
+            font-size:1.1em;
+            background-color: rgb(163, 142, 122);
+            color: white;
+            text-align: center;
+            padding-left: 2%;
+            padding-right: 2%;
+            width: 100%;
+            border-collapse: collapse;
+            margin-left: 0px;
+            margin-right: 0px;
+            opacity: 0.95;
+        }
+
+        th, td {
+            border: 1px solid #383838;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: rgb(117, 127, 146 );
+        }
+
+        tr:nth-child(even) {
+            background-color: rgb(185, 196, 218);
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(157, 168, 189);
+        }
+    </style>
+
+    </head>
+
+    <body>
+
+      <table>
+
+        <tr><th>Ligne</th><th>URL</th><th>Code HTTP</th><th>Encodage</th></th>
+
+        <tr>
+        <td>1</td>
+        <td>https://fr.wikipedia.org/wiki/Robot</td>
+        <td>200</td>
+        <td>UTF-8</td>
+        </tr>
+
+        <tr>
+        <td>2</td>
+        <td>https://fr.wikipedia.org/wiki/Robot_de_cuisine</td>
+        <td>200</td>
+        <td>UTF-8</td>
+        </tr>
+
+        <tr>
+        <td>3</td>
+        <td>fr.wikipedia.org/wiki/Robot_d%27indexation</td>
+        <td>200</td>
+        <td>UTF-8</td>
+        </tr>
+
+        <tr>
+        <td>4</td>
+        <td>https://fr.wikipedia.org/wiki/Bot_informatique</td>
+        <td>200</td>
+        <td>UTF-8</td>
+        </tr>
+
+        <tr>
+        <td>5</td>
+        <td>https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)</td>
+        <td>404</td>
+        <td>UTF-8</td>
+        </tr>
+
+        <tr>
+        <td>6</td>
+        <td>https://roboty.magistry.fr</td>
+        <td>502</td>
+        <td></td>
+        </tr>
+
+      </table>
+
+    </body>
+
+</html>

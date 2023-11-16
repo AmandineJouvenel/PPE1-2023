@@ -136,15 +136,12 @@ La commande chmod +x permet de rendre le fichier exécutable.
 ### Instructions de contrôle
 
 Les instructions de contrôle permettent d'effectuer des traitements selon certaines conditions.
-
 Nous avons vu l'instruction if qui peut porter sur des chemins, des chaînes de caractères, ou des entiers.
-
 Un des intérêts de if est de vérifier si l'utilisateur a bien entré les arguments nécessaires au traitement.
 
 ### Boucles for et while
 
 Les boucles for permettent de répéter des actions en itérant sur une variable. Ce la a pour intérêt de raccourcir le code.
-
 Les boucles while permettent de répéter des actions en itérant sur une variable tant qu'une condition est vérifiée.
 
 ### HTML
@@ -174,7 +171,6 @@ Nous avons vu 2 options intéressantes de Lynx :
 ### wget et cURL
 
 wget et cURL sont deux commandes permettant de récupérer des pages web sans passer par un navigateur.
-
 Pour lancer la commande curl : curl <URL>
 
 Nous avons vu quelques options utiles de curl :
@@ -257,4 +253,55 @@ On redirige la sortie du programme miniprojet.sh vers un fichier de sortie, en e
 1) Nettoyage du fichier avec grep -o -E '\w+' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]'
 2) Mots les plus fréquents avec cat ./fichier_nettoye.txt | sort | uniq -c | sort -nr | head -n $nb_mots
 3) Bigrammes les plus fréquents avec paste <(head -n -1 fichier_nettoye_bigrammes.txt) <(tail -n +2 fichier_nettoye_bigrammes.txt) > bigrammes.txt
+
+
+## Séance 8
+
+### Correction des exercices supplémentaires
+
+- prepa_fichier.sh
+- frequence_mots.sh
+- frequence_bigrammes.sh
+
+### Correction de l'exercice de création d'un tableau html dans miniprojet
+
+- miniprojet.sh
+- tableau-fr.html
+
+### Les pages GitHub
+
+Les pages github permettent de créer et déployer un site web moé à un dépôt git. C'est une solution simple qui permet de créer des sites statiques. C'est sous cette forme qu'on rendra notre projet de groupe. Nous avons ensuité créé notre dépôt.
+
+### CSS
+
+Le CSS permet de modifier les éléments de style d'une page HTML.
+On peut modifier le style d'une balise en y intégrant directement du CSS via l'attribut style.
+On peut aussi ajouter des balises style entre lesquelles on donne les propriétés graphiques des éléments en fonction de leur type. Cela permet de ne pas préciser à chaque fois et de généraliser un style à tous les éléments de telle ou telle type de balise.
+Dernière façon de faire : créer un fichier CSS à part, ajouter dans le document html une balise link qui indique qu'on applique le style contenu dans le fichier CSS.
+On peut également appliquer des styles en fonction de la classe des balises.
+
+Dans le cadre de notre projet, on utilisera des bibliothèques déjà existantes, comme bulma.
+
+### Notions principales
+
+Il faudra faire attention à 2 types de classes :
+- les classes de base (colonnes, titres...)
+- les modifieurs (classes dont le nom commence par is- ou has-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
