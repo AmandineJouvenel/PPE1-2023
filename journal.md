@@ -294,3 +294,17 @@ Il faudra faire attention à 2 types de classes :
 - modifier le css du tableau pour avoir un résultat plus joli
 
 Lien de la page d'accueil : https://amandinejouvenel.github.io/PPE1-2023/
+
+
+## Séance 9
+
+### Attendus de la séance d'aujourd'hui
+
+On va commencer par préparer les textes. On va s'assurer qu'on peut bien communiquer avec les URLs pour le projet. Puis, on récupère les pages HTML et le contenu textuel de ces pages, à l'aide de ce qu'on a fait aux séances précédentes.
+Etape suivante : gérer l'encodage. Il faut normaliser nos textes en UTF-8.
+Une fois nos textes prétraités, on compte les occurrences de chaque mot dans chaque page web et idem pour les bigrammes. On va aussi commencer à récupérer les contextes de notre mot en récupérant des lignes autour de notre mot. On va faire un concordancier pour regarder l'usage de notre mot.
+
+### Le rendu
+
+Le rendu sera en groupe : au minimum un rendu par groupe. On crée une page d'acceuil du projet liée aux tableaux enrichis par rapport à ce qu'on a fait dans le mini-projet. On vérifie que les liens marchent bien sur internet (et pas uniquement sur notre ordinateur). On va avoir des problèmes. Stratégie : toujours pull avant commit et push !
+Puis on commit et on tag projet1. Il faut indiquer le lien vers le tage et les membres de notre groupe.
