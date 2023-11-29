@@ -308,3 +308,28 @@ Une fois nos textes prétraités, on compte les occurrences de chaque mot dans c
 
 Le rendu sera en groupe : au minimum un rendu par groupe. On crée une page d'acceuil du projet liée aux tableaux enrichis par rapport à ce qu'on a fait dans le mini-projet. On vérifie que les liens marchent bien sur internet (et pas uniquement sur notre ordinateur). On va avoir des problèmes. Stratégie : toujours pull avant commit et push !
 Puis on commit et on tag projet1. Il faut indiquer le lien vers le tage et les membres de notre groupe.
+
+
+## Séance 10
+
+### Point textométrie avec iTrameur
+
+Le trameur est un logisciel de textométrie : analyse automatique et statistique de textes en vue de leur analyse. Ces résultats servent à montrer des choses notables dans les textes car elles apparaissent très fréquemment ou très peu fréquemment (résultats statistiques). iTrameur permet une pproche quantitative (qui sert une approche qualitative).
+
+### iTrameur pour comparer
+
+On compare des documents, et plus généralement des données textuelles qui ont une certaine structure. On doit donner un pseudo-XML à iTrameur, pour représenter les différentes parties. Partie principale = dump = une section de notre document.
+On peut faire le calcul des spécificités pour savoir si un mot est spécifique à une partie spécifique (auteur, année, etc.). Si on veut savoir quels sont les mots les plus associés à notre mot étudié, on peut faire le calcul des spécificités.
+
+### Spécificité et loi hypergéométrique
+
+Il faut prendre en compte la fréquence relative (nombre d'occurrences par rapport à la taille de la partie) ! Pour avoir cet indice de spécificité, on va calculer la probabilité de trouver une distribution d'un mot de 50% en plus ou en moins dans une partie par rapport à une autre.
+La loi hypergéométrique, c'est la loi normale mais décalée d'un côté ou de l'autre. Cela permet de comparer les proportions dans 2 échantillons d'un corpus. Elle prend en comtpe le nombre d'occurrences du mot dans le corpus, le nombre d'occurrences du mot dans la partie étudiée, la fréquence du mot dans le corpus, et la fréquence du mot dans la partie étudiée.
+Cela permet de prendre en compte le hasard dans notre corpu et donne une spécificité.
+
+Spécificité = indice d'un emploi atypique d'une forme dans une partie du corpus (négatif pour un sous-emploi ou positif pour un sur-emploi).
+La spécificité est donnée en log10 et donne donc un ordre de grandeur de la probabilité. Plus la spécificité est grande, plus la probabilité est faible. On peut utiliser cette mesure pour mesure le fait qu'un mot apparaisse plus ou moins dans une partie ou dans le contexte d'un mot.
+
+### Comparer les unités textuelles
+
+iTrameur se base sur des comptages de mots. Le choix du découpage des mots est très important car il impacte les calculs (ex : damelo vs. donne-le moi --> combien de mots ?).
