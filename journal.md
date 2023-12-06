@@ -333,3 +333,26 @@ La spécificité est donnée en log10 et donne donc un ordre de grandeur de la p
 ### Comparer les unités textuelles
 
 iTrameur se base sur des comptages de mots. Le choix du découpage des mots est très important car il impacte les calculs (ex : damelo vs. donne-le moi --> combien de mots ?).
+
+
+## Séance 11
+
+### Environnement python
+
+Pendant cette séance, nous avons installé un environnement python dans notre dossier PPE (avec la commande 'python3 -m venv path/to/venv'). Nous avons ensuite installé thulac pour la tokenisation du chinois. Mais on peut également utiliser le programme python tokenise_chinese fourni par les profs. On place le script tokenise_chinese dans notre dossier 'programmes' du projet.
+
+### Contourner les problèmes d'iTrameur
+
+iTrameur ne prend pas en compte les regex, ce qui va poser des problèmes dnas l'naalyse des cooccurrents de notre mot. Pour contourner ce problème, on va utiliser un script python : cooccurrents.py, qui recrée des tableaux de cooccurrents comme dans iTrameur. On lui donne une liste de fichiers en entrée et on lui donne l'option obligatoire target pour dire quel mot nous intéresse.
+
+Commande pour lancer le script : ./cooccurrents.py /chemin/vers/fr-1.txt --target "robots?" -s i --match-mode regex
+
+fr-1.txt : fichier dans lequel on veut chercher, mais dans notre cas c'est une liste de fichiers !
+--target "robots?" : notre cible
+-s i : permet de rendre insensible à la casse.
+--match-mode regex : permet de dire au script qu'on va chercher une regex.
+-t itrameur : optionnel, pour préciser si on veut des résultats comparables à itrameur
+
+### Nuages de mots avec wordcloud
+
+wordcloud permet d'obtenir les nuages de mots pour notre analyse. Attention, pour le chinois, il faut mettre une font dans laquelle les caractères chinois existent ! Pour cela, on lui indique le chemin vers la font appropriée.
